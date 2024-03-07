@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery $('input') vs $(':input') Selectors</title>
+<style>
+    body{
+        background-color:aqua;
+        
+    }
+
+    input:hover{
+        background-color:yellow;
+    }
+
+    #demo{
+        background-color:Orange;
+        padding-left:10px;
+        padding-right:10px;
+    }
+
+    
+</style>
+</head>
+<body>
+<section>
+<form action="/">
+<label for="name">Name: </label>
+<input type="text" name="Name" /> <br><br>
+<label for="email">Email: </label>
+<input type="email" name="Email" /> </br> </br>
+<fieldset>
+<legend>Skillset: </legend>
+<label>HTML:
+<input type="checkbox" value="HTML" name="checkgroup[]" /></label>
+<label>CSS:
+<input type="checkbox" value="CSS" name="checkgroup[]" /></label>
+<label>JavaScript:
+<input type="checkbox" value="JavaScript" name="checkgroup[]" /></label>
+<label>jquery:
+<input type="checkbox" value="jquery" name="checkgroup[]" /></label>
+</fieldset> </br> <br>
+
+<label>Enter your DOB</label>
+<input type="datetime-local" name="datetime" /> </br><br>
+<label>Upload your Photo: </label>
+<input type="file" name="file" /> </br><br>
+<label>Years of experience: </label>
+<input type="number" name="number" /> </br><br>
+<label>Password: </label>
+<input type="password" name="password" /> </br><br>
+<fieldset>
+<legend>Male</legend>
+<label>Male:
+<input type="radio" value="Male" name="radiogroup" /></label>
+<label>Female:
+<input type="radio" value="Female" name="radiogroup" /></label>
+</fieldset> </br>
+<label>Enter your contact number </label>
+<input type="tel" name="tel" /> </br><br>
+<label>Enter your website </label>
+<input type="url" name="url" /> </br><br>
+
+<label>Select the position</label>
+<select name="select2" size="3" multiple>
+<option>Web developer</option>
+<option>Web Designer</option>
+</select> </br> </br>
+<fieldset>
+<legend>Enter your university </legend>
+<input type="text" name="datalist" list="samplelist">
+<datalist id="samplelist">
+<option>MAKAUT</option>
+<option>Techno India</option>
+<option>If other please specify</option>
+</datalist>
+</fieldset> </br>
+<label>Any other comments</label>
+<textarea name="textarea"></textarea>
+</form>
+</section>
+<button id="demo">Submit</button>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+    const allInput = $('input').length;
+    const allInputSelector = $(':input').length;
+    console.log(`Total number of <input> tags are ${allInput} and total number of <:inputs> are ${allInputSelector}` );
+    console.log($('input'));
+    console.log($(':input'));
+    });
+    </script>
+    </body>
+    </html>
+
+
+

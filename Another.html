@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<h1>jQuery Element Selector</h1>
+<p class ="p">This is Some text</p>
+<p class ="p">This is some another text</p>
+<button id="demo">Click Me</button>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+$(document).ready(function () {
+$('#demo').click(function () {
+$('.p').css('border', '2px solid blue');
+});
+});
+</script>
+</body>
+</html> 
