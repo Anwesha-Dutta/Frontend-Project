@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>How to Select Values of Checkbox Group with jQuery</title>
+</head>
+<body>
+<section>
+<form action="/">
+<fieldset>
+<legend>Skillset: </legend>
+<label>HTML:
+<input type="checkbox" name="skillset" value="HTML" /></label>
+<label>CSS:
+<input type="checkbox" name="skillset" value="CSS"/></label>
+<label>JavaScript:
+<input type="checkbox" name="skillset" value="JavaScript"/></label>
+<label>jquery:
+<input type="checkbox" name="skillset" value="jquery"/></label>
+</fieldset>
+<br>
+<fieldset>
+<legend>Preferred Interview Location </legend>
+<label>Kolkata:
+<input type="checkbox" name="location" value="Kolkata" /></label>
+<label>Bhubaneshwar:
+<input type="checkbox" name="location" value="Bhubaneshwar"/></label>
+<label>Bangalore:
+<input type="checkbox" name="location" value="Bangalore"/></label>
+<label>Pune:
+<input type="checkbox" name="location" value="Pune"/></label>
+</fieldset>
+</form>
+
+</section> </br>
+<button class="demo" id="skillset" value="submit">Get skillset</button>
+<button class="demo" id="location" value="submit">Get location</button>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+$('#skillset').click(function() {
+getCheckedValues('skillset');
+});
+$('#location').click(function() {
+getCheckedValues('location');
+});
+});
+function getCheckedValues(nameAttr) {
+var valueStore = [];
+$.each($("input[name='" + nameAttr + "']:checked"), function() {
+valueStore.push($(this).val());
+});
+alert("My favourites " + nameAttr + " are: " + valueStore.join("-"));
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery Each Function</title>
+</head>
+<body>
+<ul>
+<li>JavaScript</li>
+<li>jQuery</li>
+<li>Angular</li>
+<li>ReactJS</li>
+<li>NodeJS</li>
+</ul>
+<div id="ResultDiv"></div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+$(document).ready(function () {
+$('li').each(function () {
+    $('#ResultDiv').html($('#ResultDiv').html() + '<br/>' + $(this).text())
+});
+});
+</script>
+</body>
+</html>
+

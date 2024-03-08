@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery Each Function</title>
+</head>
+<body>
+<h3>jQuery Each Method</h3>
+<section>
+<div id="1st">This is 1st text</div>
+<div id="2nd">This is 2nd text</div>
+<div id="3rd">This is 3rd text</div>
+</section>
+</br>
+<button class="demo">Click Me</button>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+$(document).ready(function () {
+$('.demo').click(function () {
+$('div').each(function(index, item){
+console.log(`${index} ${$(this).attr('id')} ${$(this).text()}`)
+});
+});
+});
+</script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+	<style>
+		h3 {
+			text-align: center;
+			font-size: 30px;
+		}
+
+		label {
+			color: black;
+			font-size: 12px;
+			margin-right: 20px;
+		}
+
+		.mr-0 {
+			margin-right: 0px;
+			margin-left: 0px;
+			width: auto;
+		}
+
+		.Address {
+			padding: 20px;
+			width: 400px;
+		}
+
+		body {
+			background-color: rgb(98, 82, 245);
+			border: 10px dotted rgb(242, 243, 245);
+		}
+
+		input {
+			border: 2px solid green;
+			border-radius: 5px;
+			padding: 8px 12px;
+			width: 400px;
+            outline: none; 
+            /* outline is there bydefault by the browser so in the case of focus we have to set 
+            the ouline as none otherwise it will overlap on the border and will not work as expected */
+		}
+
+        input:focus{
+            border:2px solid red;
+        }
+			input[type="radio"] {
+				width: auto;
+			}
+
+		label {
+			font-size: 16px;
+			font-weight: bold;
+			width: 135px;
+			display: inline-block;
+		}
+
+		form {
+			background-color: #EEE8AA;
+			padding: 20px;
+			border: 5px solid violet;
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+
+		div {
+			width: 50%;
+			align-items: center;
+		}
+
+		.Submit {
+			padding-left: 10px;
+			padding-right: 10px;
+			color: black;
+			background-color: orange;
+			font-weight: bolder;
+			width: auto;
+		}
+
+		.form-group {
+			display: flex;
+			align-items: flex-start;
+			width: auto;
+			margin-bottom: 16px;
+		}
+
+		.error {
+			color: red;
+			display: none;
+		}
+
+
+
+	</style>
+</head>
+<body>
+	<div style="margin:0 auto">
+
+		<form action="submit.html" name="myform" onsubmit="return validateform()">
+			<h3 style="color:red;">OrderFoodOnline</h3>
+			<div class="form-group">
+				<label for="name">Name:</label>
+				<div class="right">
+					<input type="text" id="name" name="name" placeholder=" Enter your name"  oninput="removeError(this)">
+					<span class="error">Please Enter your Name</span>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="Date">Date:</label>
+				<div class="right">
+					<input type="date" id="Date" name="Date" oninput="removeError(this)" min="2024-03-06" >
+					<span class="error">Please Choose a Date</span>
+				</div>
+
+			</div>
+
+
+			<div class="form-group">
+				<label for="email">email ID:</label>
+				<div class="right">
+					<input type="email" id="email" name="email" placeholder="Enter your email ID" oninput="removeError(this)"/>
+					<span class="error" >Please enter your Email Address</span>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="Contact Number">Contact Number:</label>
+				<div class="right">
+					<input type="Contact Number" id="ContactNumber" name="ContactNumber" placeholder="Enter your phone number" class="Con"  oninput="removeError(this)"/>
+					<span class="error" >Please Provide 10 digit number </span>
+				</div>
+			</div>
+
+			<label for="Select Food" recuired>Select Food:</label>
+			<label for="Non-vegeterian" class="mr-0">Non-vegeterian</label>
+			<input type="radio" id="Non-vegeterian" name="Select Food"/>
+			<label for="Vegeterian" class="mr-0">Vegeterian</label>
+			<input type="radio" id="Vegeterian" class="new" name="Select Food"><br></br>
+
+
+
+			<label for="Select Resturant">Select Resturant:</label>
+			<input list="Select Resturant" name="Select Resturant">
+
+			<datalist id="Select Resturant">
+
+				<option value="KFC">
+
+				<option value="TestRider">
+
+				<option value="DadaBoudi">
+
+			</datalist>
+			</br></br>
+			<label for="Drink">Drink:</label>
+			<input list="Drink" name="Drink">
+
+			<datalist id="Drink">
+
+				<option value="Mango Shake">
+
+				<option value="Banana Shake">
+
+				<option value="Lassi">
+
+			</datalist>
+
+			</br></br>
+			<label for="Soups">Soups:</label>
+			<input list="Soups" name="Soups">
+
+			<datalist id="Soups">
+
+				<option value="Chicken Soup">
+
+				<option value="Vegetable Soup">
+
+				<option value="Mashroom Soup">
+
+			</datalist>
+
+			</br></br>
+			<label for="Dishes">Dishes:</label>
+			<input list="Dishes" name="Dishes">
+
+			<datalist id="Dishes">
+
+				<option value="Chicken Kasha">
+
+				<option value="Chicken Resala">
+
+				<option value="Chicken Mashala">
+
+			</datalist>
+			<br /><br />
+			<label for="Order For">Oder For:</label>
+			<label for="Take Away" class="mr-0">Take Away</label>
+			<input type="radio" id="Take Away" name="Order For">
+			<label for="Home Delivery" class="mr-0">Home Delivery </label>
+			<input type="radio" id="Home Delivery" class="new1" name="Order For"><br></br>
+
+			<label for="Address">Address:</label>
+			<textarea id="Address" name="Address" class="Address"></textarea><br> <br />
+
+			<label for="State">State:</label>
+
+			<input list="State" name="State">
+
+			<datalist id="State">
+
+				<option value="Callifornia"></option>
+				<option value="West Bengal"></option>
+				<option value="Maharastra"></option>
+				<option value="UP"></option>
+				<option value="Bihar"></option>
+			</datalist>
+			<br>
+			<br>
+			<center>
+				<input type="Submit" name="Submit" value="Submit" class="Submit">
+			</center>
+		</form>
+
+	</div>
+
+
+	<script>
+		function validateform() {
+           // document.getElementById("name").focus(); ai chup... besi bokchis... Thuke deobo
+
+			var name = document.myform.name;
+			//console.log("Target", name);
+			var Date = document.myform.Date;
+			//console.log("Target", Date);
+            var email=document.myform.email;
+            //console.log("Target",email);
+            var ContactNumber=document.myform.ContactNumber;
+
+			if (name.value == null || name.value == "") {
+				name.nextElementSibling.style = "display:block";
+				console.log(name.nextElementSibling);
+			}
+			else {
+				name.nextElementSibling.style = "display:none";
+			}
+
+			if (Date.value == null || Date.value == "") {
+				Date.nextElementSibling.style = "display:block";
+				console.log(Date.nextElementSibling);
+			}
+			else {
+				Date.nextElementSibling.style = "display:none";
+			}
+
+			if (email.value == null || email.value == "") {
+				email.nextElementSibling.style = "display:block";
+				console.log(email.nextElementSibling);
+			}
+
+			else {
+				email.nextElementSibling.style = "display:none";
+			}
+
+
+             if (ContactNumber.value.length<10 || ContactNumber.value.lenth>10){
+                ContactNumber.nextElementSibling.style="display:block";
+                console.log(ContactNumber.nextElementSibling);
+			}
+			 else {
+				 ContactNumber.nextElementSibling.style = "display:none";
+			 }
+             return false;
+		}
+		function removeError(elm) {
+			elm.nextElementSibling.style.display = 'none';
+		}
+
+
+        // function setdate()
+        // {
+        //     document.getElementById("Date")
+        // }
+
+
+        var dateformat = new Date();
+        console.log(dateformat);
+
+        var year = dateformat.getFullYear();
+        console.log(year);
+
+        var month = dateformat.getMonth()+1; //indexing of month start from 0 that's why I have to add 1 with it
+        console.log(month);
+
+        var day =dateformat.getDate();
+        console.log(day);
+
+        //It is not recuired for this script it is just for testing purpose
+        // var newformat = new Date().toUTCString(); //it means Co-ordinatedn Universal Time
+        // console.log(newformat)
+        
+
+        if(day<10 ) 
+        {
+          day = "0"+day
+        console.log("day is:"+day);
+        }
+
+        if(month<10 ) 
+        {
+          month = "0"+month
+        console.log("month is:"+month);
+        }
+
+          var getDate = year +"-"+month+"-"+day;
+      
+        var attribute = document.getElementById("Date").getAttribute("min");
+        console.log(attribute);
+
+        document.getElementById("Date").setAttribute("min",getDate);
+	</script>
+
+	
+</body>
+</html>

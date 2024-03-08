@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <title>AutoComplete</title>
+
+    <style>
+        #tags:hover{
+            background-color:yellow;
+        }
+
+    </style>
+    <script>
+        $(function(){
+        var CityList = ['Bankura', 'Bishnupur', 'Kolkata', 'Durgapur', 'Medinipur', 'Pune', 'Mumbai','Delhi','Dhaka','Chattagram'];
+        $("#tags").autocomplete(
+            {
+                source:CityList
+            }
+        );
+        });
+
+    </script>
+</head>
+<body>
+     <div class="auto_complete">
+        <label for="tags">City</label>
+        <input id="tags">
+     </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Working with JSON Array</title>
+</head>
+<body>
+<h3>Working with JSON Array</h3>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+var employeeList = [{
+"firstname": "Rick",
+"lastname": "Brown",
+"age": 22,
+"salary": 15000
+},
+{
+"firstname": "John",
+"lastname": "Doe",
+"age": 24,
+"salary": 12000
+},
+{
+"firstname": "Sarah",
+"lastname": "Tye",
+"age": 25,
+"salary": 17000
+}];
+$.each(employeeList, (index, item) => {
+console.log(`Index no ${index} :- The Full Name of the employee is ${item.firstname} ${item.lastname}.
+His age is ${item.age} and salary is ${item.salary}`)
+});
+
+
+</script>
+</body>
+</html>

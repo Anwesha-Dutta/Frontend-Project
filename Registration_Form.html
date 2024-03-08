@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        form {
+            width: 300px;
+            margin: 0 auto;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input[type="text"], input[type="email"], input[type="tel"] {
+            width: 100%;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <label for="firstName">Enter Your First Name</label>
+        <input type="text" id="firstName" name="firstName" required>
+
+        <label for="lastName">Enter Your Last Name</label>
+        <input type="text" id="lastName" name="lastName" required>
+
+        <label for="email">Enter Your Email ID</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="mobile">Enter Your Mobile Number</label>
+        <input type="tel" id="mobile" name="mobile" required>
+
+        <label for="workingMobile">Your Working Mobile Number</label>
+        <input type="tel" id="workingMobile" name="workingMobile" value="9836937030" readonly>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#registrationForm').submit(function (event) {
+                event.preventDefault();
+                // Custom validation logic
+                var mobileValue = $('#mobile').val();
+                var workingMobileValue = $('#workingMobile').val();
+                if (mobileValue !== workingMobileValue) {
+                    $('#mobileErrorMessage').text('Mobile number must match the working mobile number.');
+                } else {
+                    $('#registrationForm')[0].submit(); // If validation passes, submit the form
+                }
+            });
+        });
+    </script>
+
+             
+</body>
+</html>

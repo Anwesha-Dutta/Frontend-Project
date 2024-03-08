@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Working with JSON</title>
+</head>
+<body>
+<h3>Working with JSON</h3>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+var employee = {
+"firstname" : "Rick",
+"lastname" : "Brown",
+"age" : 22,
+"salary" : 15000
+};
+$.each( employee, function(key, val){
+console.log(`The property is ${key} and the value is ${val}`)
+});
+</script>
+</body>
+</html>
